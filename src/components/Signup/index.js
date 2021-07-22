@@ -5,10 +5,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import Container from '../../components/common/Container/Index';
 import CustomButton from '../../components/common/CustomButton';
 import Input from '../../components/common/Input';
-import {REGISTER} from '../../constants/routeNames'
+import {LOGIN} from '../../constants/routeNames'
 import styles from './styles';
 
-const LoginComponent = () => {
+const RegisterComponent = () => {
     const {navigate} = useNavigation();
 
     return (
@@ -17,7 +17,7 @@ const LoginComponent = () => {
 
             <View>
                 <Text style={styles.title}>Welcome to RNContacts</Text>
-                <Text style={styles.subTitle}>Please login here</Text>
+                <Text style={styles.subTitle}>Create a free account</Text>
 
                 <View style={styles.form}>
                     <Input
@@ -26,6 +26,28 @@ const LoginComponent = () => {
                         placeholder="Enter Username"
                         //error={"This field is required"}
                     />
+
+                     <Input
+                        label='First Name'
+                        iconPosition="right"
+                        placeholder="Enter First Name"
+                        //error={"This field is required"}
+                    />
+
+                    <Input
+                        label='Last Name'
+                        iconPosition="right"
+                        placeholder="Enter Last Name"
+                        //error={"This field is required"}
+                    />
+
+                    <Input
+                        label='Email'
+                        iconPosition="right"
+                        placeholder="Enter Email"
+                        //error={"This field is required"}
+                    />
+
 
                     <Input
                         label='Password'
@@ -38,9 +60,9 @@ const LoginComponent = () => {
                     <CustomButton primary title='Submit' />
 
                     <View style={styles.createSection}>
-                        <Text style={styles.infoText}>Need a new account?</Text>
-                        <TouchableOpacity onPress={()=>{navigate(REGISTER)}}>
-                            <Text style={styles.linkBtn}>Register</Text>
+                        <Text style={styles.infoText}>Alredy have an account?</Text>
+                        <TouchableOpacity onPress={()=>{navigate(LOGIN)}}>
+                            <Text style={styles.linkBtn}>Login</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -50,4 +72,4 @@ const LoginComponent = () => {
     )
 }
 
-export default LoginComponent
+export default RegisterComponent
